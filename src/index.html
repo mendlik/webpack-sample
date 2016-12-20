@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="<%= htmlWebpackPlugin.options.config.lang %>">
+<head>
+  <title><%= htmlWebpackPlugin.options.config.title %></title>
+</head>
+<body>
+  <div id="root"></div>
+  <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+  <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+  <% } %>
+</body>
+</html>
