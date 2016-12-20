@@ -1,0 +1,7 @@
+{
+  "name": "sample-spa",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "mendlik <mendelski.pawel@gmail.com>",
+  "license": "MIT"
+}
