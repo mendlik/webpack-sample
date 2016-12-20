@@ -4,6 +4,16 @@
   "main": "index.js",
   "author": "mendlik <mendelski.pawel@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "watch": "webpack-dev-server --inline --hot --mode watch --config ./webpack-config.babel.js",
+    "start": "webpack-dev-server --watch --config ./webpack-config.babel.js",
+    "build": "webpack --progress --config ./webpack-config.babel.js",
+    "build-debug": "npm run build -- --mode debug",
+    "ci": "npm run lint && npm run test && npm run build",
+    "test": "echo 'No tests to run'",
+    "lint": "eslint --max-warnings 0 --cache .",
+    "clean": "rimraf ./build"
+  },
   "devDependencies": {
     "autoprefixer": "^6.5.4",
     "babel-cli": "^6.18.0",
@@ -30,6 +40,7 @@
     "optimist": "^0.6.1",
     "precss": "^1.4.0",
     "resolve-url-loader": "^1.6.1",
+    "rimraf": "^2.5.4",
     "sass-loader": "^4.1.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
