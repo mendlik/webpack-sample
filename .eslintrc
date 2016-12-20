@@ -1,0 +1,17 @@
+extends: eslint-config-airbnb
+parser: babel-eslint
+env:
+  node: true
+  browser: true
+plugins: [react, import]
+settings:
+  import/parser: babel-eslint
+  import/resolve:
+    moduleDirectory: [node_modules, src]
+rules:
+  comma-dangle: [error, never]
+  no-unused-expressions: [0]
+  import/no-named-as-default: error
+  jsx-a11y/anchor-has-content: 0
+  react/jsx-filename-extension: [1, { "extensions": [".js", ".jsx"] }]
+  no-prototype-builtins: 0
