@@ -3,11 +3,28 @@ import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import appConfig from './src/config';
 
-const htmlPlugin =
+const htmlPlugin = () =>
   new HtmlWebpackPlugin({
     template: 'index.html',
     config: appConfig,
-    inject: false
+    inject: false,
+    minify: {
+      caseSensitive: true,
+      collapseWhitespace: true,
+      removeComments: true
+    }
+  });
+
+const definePlugin = () =>
+  new webpack.DefinePlugin({
+    'process.env': {
+      'NODE_ENV': JSON.stringify('production')
+    }
+  });
+
+const uglifyPlugin = () =>
+  new webpack.optimize.UglifyJsPlugin({
+    compress: { warnings: false }
   });
 
 export default {
@@ -24,9 +41,15 @@ export default {
   },
   output: {
     path: path.resolve('./build'),
-    filename: 'main.js'
+    publicPath: '/',
+    filename: 'main-[chunkhash].js'
   },
   plugins: [
-    htmlPlugin
+    htmlPlugin(),
+    definePlugin(),
+    new webpack.NoErrorsPlugin(),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    uglifyPlugin()
   ]
 };
