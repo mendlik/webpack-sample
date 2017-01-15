@@ -1,10 +1,11 @@
+import React from 'react';
+import ReactDom from 'react-dom';
 import './theme/global.scss';
-import app from './app';
+import App from './app/App';
 
-const root = document.getElementById('root');
-while (root.firstChild) {
-  root.removeChild(root.firstChild);
-}
-root.appendChild(app);
+ReactDom.render(
+  <App />,
+  document.getElementById('root')
+);
 
 // if (module.hot) module.hot.accept();

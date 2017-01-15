@@ -1,10 +1,13 @@
-import callout from './index';
+import React from 'react';
+import Callout from './index';
 
 uiTest('callout ', () => {
   it('should contain a header', () => {
-    expect(callout.querySelector('h5')).to.exist;
+    const wrapper = shallow(<Callout />);
+    expect(wrapper.find('h5')).to.exist;
   });
   it('should contain a paragraph', () => {
-    expect(callout.querySelector('p')).to.exist;
+    const wrapper = shallow(<Callout />);
+    expect(wrapper.find('p')).to.exist;
   });
 });
