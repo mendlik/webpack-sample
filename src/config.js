@@ -1,5 +1,5 @@
 export default {
-  title: 'Sample SPA',
-  description: 'Sample single page application',
+  title: 'Webpack Starter',
+  description: 'Webpack starter project',
   lang: 'en'
 };

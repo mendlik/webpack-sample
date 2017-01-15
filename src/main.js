@@ -1,3 +1,4 @@
+import './global.scss';
 import app from './app';
 
 const root = document.getElementById('root');
@@ -6,4 +7,4 @@ while (root.firstChild) {
 }
 root.appendChild(app);
 
-if (module.hot) module.hot.accept();
+// if (module.hot) module.hot.accept();
