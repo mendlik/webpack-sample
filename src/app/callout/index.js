@@ -1,5 +1,5 @@
 import style from './callout.scss';
-import config from '../config';
+import config from '../../config';
 
 const createElement = (type, text) => {
   const element = document.createElement(type);
