@@ -14,6 +14,7 @@
     "test": "jest ./test/**/*.spec.js",
     "clean": "rimraf ./build",
     "lint": "eslint --max-warnings 0 --cache .",
+    "favicons": "babel-node ./lib/favicons",
     "build": "webpack --progress --config ./webpack-config.babel.js",
     "ci": "run-s clean lint test build",
     "build:debug": "npm run build -- --env.mode debug",

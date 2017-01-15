@@ -1,4 +1,4 @@
-import './global.scss';
+import './theme/global.scss';
 import app from './app';
 
 const root = document.getElementById('root');
