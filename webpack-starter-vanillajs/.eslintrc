@@ -1,0 +1,14 @@
+extends: eslint-config-airbnb
+parser: babel-eslint
+env:
+  node: true
+  browser: true
+  jest: true
+plugins: [react, import]
+settings:
+  import/parser: babel-eslint
+  import/resolve:
+    moduleDirectory: [node_modules, src]
+rules:
+  comma-dangle: [error, never]
+  react/jsx-filename-extension: 0
