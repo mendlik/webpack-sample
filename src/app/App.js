@@ -1,5 +1,5 @@
 import React from 'react';
-import Callout from './callout';
+import Callout from './Callout';
 
 const App = () => (
   <div>

@@ -15,14 +15,14 @@
     "clean": "rimraf ./build",
     "lint": "eslint --max-warnings 0 --cache .",
     "favicons": "babel-node ./lib/favicons",
-    "build": "webpack --progress --config ./webpack-config.babel.js",
+    "build": "webpack --progress --config ./webpack.babel.js",
     "ci": "run-s clean lint test build",
     "build:debug": "npm run build -- --env.mode debug",
     "build:watch": "npm run build -- --watch --env.mode debug",
     "serve": "http-server ./build",
     "livereload": "livereload ./build",
-    "watch": "webpack-dev-server --inline --hot --watch --port 9090 --config ./webpack-config.babel.js --env.mode watchHot",
-    "watch:reload": "webpack-dev-server --watch --config --port 9090 ./webpack-config.babel.js --env.mode watchReload",
+    "watch": "webpack-dev-server --inline --hot --watch --port 9090 --config ./webpack.babel.js --env.mode watchHot",
+    "watch:reload": "webpack-dev-server --watch --config --port 9090 ./webpack.babel.js --env.mode watchReload",
     "watch:livereload": "run-p livereload serve build:watch"
   },
   "devDependencies": {
@@ -31,11 +31,13 @@
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
     "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
     "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "babel-runtime": "^6.26.0",
     "copy-webpack-plugin": "^4.2.0",
     "css-loader": "^0.28.7",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.3",
     "eslint": "^4.10.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-loader": "^1.9.0",
@@ -52,8 +54,8 @@
     "lodash": "^4.17.4",
     "node-sass": "^4.5.3",
     "npm-run-all": "^4.1.1",
-    "precss": "^2.0.0",
     "postcss-loader": "^2.0.8",
+    "precss": "^2.0.0",
     "resolve-url-loader": "^2.2.0",
     "rimraf": "^2.6.2",
     "sass-loader": "^6.0.6",
@@ -62,5 +64,13 @@
     "webpack": "^3.8.1",
     "webpack-chunk-hash": "^0.5.0",
     "webpack-dev-server": "^2.9.4"
+  },
+  "dependencies": {
+    "babel-preset-react": "^6.24.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-hot-loader": "^3.1.1",
+    "react-test-renderer": "^16.0.0",
+    "rfg-api": "^0.3.0"
   }
 }

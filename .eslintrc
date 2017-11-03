@@ -11,3 +11,4 @@ settings:
     moduleDirectory: [node_modules, src]
 rules:
   comma-dangle: [error, never]
+  react/jsx-filename-extension: 0
