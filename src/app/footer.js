@@ -1,8 +1,11 @@
 import style from './footer.scss';
 
-const footer = document.createElement('footer');
-const text = document.createTextNode('Footer');
-footer.appendChild(text);
-footer.classList.add(style.content);
+const footer = () => {
+  const element = document.createElement('footer');
+  const text = document.createTextNode('Footer');
+  element.appendChild(text);
+  element.classList.add(style.content);
+  return element;
+};
 
 export default footer;
