@@ -1,5 +1,6 @@
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import autoprefixer from 'autoprefixer';
+import precss from 'precss';
 
 const buildExtractStylePlugin = opts =>
   new ExtractTextPlugin({
@@ -40,7 +41,7 @@ const postCssLoader = opts => ({
   loader: 'postcss-loader',
   options: {
     sourceMap: opts.sourceMaps,
-    plugins: () => [autoprefixer]
+    plugins: () => [precss, autoprefixer]
   }
 });
 
@@ -68,7 +69,7 @@ const buildStyleConfig = opts => ({
         use: prepareStyleLoader(cssModuleLoader, opts)
       },
       {
-        test: /(global\.scss|global\.css)$/,
+        test: /global\.(scss|css)$/,
         use: prepareStyleLoader(globalCssLoader, opts)
       }
     ]

@@ -69,8 +69,9 @@
     "webpack-dev-server": "^2.9.4"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "precss": "^2.0.0",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "babel-polyfill": "^6.26.0"
+    "react-dom": "^16.0.0"
   }
 }

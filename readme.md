@@ -4,7 +4,8 @@ Starter [webpack](https://webpack.js.org/) projects.
 Use them as a starting point for a single page applications.
 
 - [webpack-starter-vanilla-spa](webpack-starter-vanilla-spa) - Framework agnostic starter project of a single page application. It means that there is no react/angular/vue.js specific code.
-- [webpack-starter-react-spa](webpack-starter-react-spa) - Simple single page application that uses react.
+- [webpack-starter-bootstrap](webpack-starter-bootstrap) - Extends webpack-starter-vanilla-spa by adding [bootstrap](http://getbootstrap.com/) resources.
+- [webpack-starter-react-spa](webpack-starter-react-spa) - Simple single page application that uses [react](https://reactjs.org/).
 
 
 ## Features

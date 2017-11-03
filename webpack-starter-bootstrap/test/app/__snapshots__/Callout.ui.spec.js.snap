@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Callout should create callout element 1`] = `
+<div
+  class="undefined"
+>
+  <h5>
+    Webpack Starter
+  </h5>
+  <p>
+    Webpack starter project for vanilla js
+  </p>
+  <p>
+    Hello world!
+  </p>
+</div>
+`;
