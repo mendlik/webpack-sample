@@ -34,6 +34,7 @@ npm run serve
 - `npm run watch` - starts a development server with [HMR](https://webpack.js.org/concepts/hot-module-replacement/)
 - `npm run test` - run all tests
 - `npm run lint` - run a source code linter
+- `npm run favicons` - regenerate favicons
 - `npm run ci` - command for continuous integration. Run: clean, lint, test, build
 
 ### Advanced test commands
