@@ -1,6 +1,6 @@
 {
   "presets": [
-    "env",
+    ["env", { "useBuiltIns": true , "targets": { "browsers": [">= 5%"] } }],
     "react"
   ]
 }

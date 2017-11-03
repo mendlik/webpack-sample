@@ -1,6 +1,7 @@
 import webpack from 'webpack';
 import WebpackChunkHash from 'webpack-chunk-hash';
 import InlineManifestWebpackPlugin from 'inline-manifest-webpack-plugin';
+import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 
 const filterEmpty = arr => arr.filter(i => !!i);
 
@@ -49,7 +50,7 @@ const buildScriptsConfig = opts => ({
     !opts.watch && opts.hash && buildChunkHashPlugin(),
     !opts.watch && buildInlineManifestPlugin(),
     opts.watch && new webpack.NamedModulesPlugin(),
-    !opts.watch && opts.optimize && new webpack.optimize.UglifyJsPlugin()
+    !opts.watch && opts.optimize && new UglifyJsPlugin()
   ]
 });
 

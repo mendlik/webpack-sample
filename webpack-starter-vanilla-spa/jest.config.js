@@ -4,7 +4,6 @@ module.exports = {
     '\\.(css|less|scss|sass)$': '<rootDir>/test/stubs/styleStub.js'
   },
   setupFiles: [
-    '<rootDir>/test/setup/shim.js',
-    '<rootDir>/test/setup/enzyme.js'
+    '<rootDir>/test/setup/shim.js'
   ]
 };

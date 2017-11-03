@@ -1,8 +1,7 @@
 import webpack from 'webpack';
 import WebpackChunkHash from 'webpack-chunk-hash';
 import InlineManifestWebpackPlugin from 'inline-manifest-webpack-plugin';
-
-const filterEmpty = arr => arr.filter(i => !!i);
+import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 
 const definePlugin = opts =>
   new webpack.DefinePlugin({
@@ -32,14 +31,9 @@ const buildScriptsConfig = opts => ({
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.js$/,
         exclude: /(node_modules)/,
-        loader: 'babel-loader',
-        options: {
-          plugins: filterEmpty([
-            opts.watch && 'react-hot-loader/babel'
-          ])
-        }
+        loader: 'babel-loader'
       }
     ]
   },
@@ -49,7 +43,7 @@ const buildScriptsConfig = opts => ({
     !opts.watch && opts.hash && buildChunkHashPlugin(),
     !opts.watch && buildInlineManifestPlugin(),
     opts.watch && new webpack.NamedModulesPlugin(),
-    !opts.watch && opts.optimize && new webpack.optimize.UglifyJsPlugin()
+    !opts.watch && opts.optimize && new UglifyJsPlugin()
   ]
 });
 

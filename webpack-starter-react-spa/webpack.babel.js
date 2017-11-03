@@ -35,8 +35,8 @@ const createConfig = (env = {}) => {
   const mode = env.mode || 'prod';
   const config = modes[mode.toLowerCase()];
   if (!config) throw new Error(`Unrecognized webpack mode: ${mode}`);
-  console.log(`Starting webpack in mode: ${mode}`);
-  console.log(`Configuration:\n${JSON.stringify(config, null, 2)}`);
+  console.error(`Starting webpack in mode: ${mode}`);
+  console.error(`Configuration:\n${JSON.stringify(config, null, 2)}`);
   return buildWebpackConfig(config);
 };
 

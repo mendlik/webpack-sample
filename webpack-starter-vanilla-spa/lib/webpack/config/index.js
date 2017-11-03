@@ -30,19 +30,13 @@ const normalizeConfig = config =>
     })
   });
 
-const buildEntryPoint = (fileName, opts) =>
-  filterEmpty([
-    opts.watch && 'react-hot-loader/patch',
-    fileName
-  ]);
-
 const buildConfigBase = opts => ({
   context: srcPath,
   devtool: opts.sourceMaps && 'cheap-module-source-map',
   devServer: opts.devServer,
   entry: {
-    main: buildEntryPoint('./main.js', opts),
-    vendor: buildEntryPoint('./vendor.js', opts)
+    main: './main.js',
+    vendor: './vendor.js'
   },
   output: {
     path: path.resolve(opts.target),

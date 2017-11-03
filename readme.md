@@ -50,3 +50,13 @@ npm run serve
 ### Advanced watch commands
 - `npm run watch:reload` - development server without HMR. Simply reloads the page. Slower than `npm run watch`.
 - `npm run watch:livereload` - the slowest version but the one that is most similar to how it looks on production.
+
+## Analyze bundles
+
+Analyze result bundles:
+
+- Generate stats.json with `npm run build -s -- --json --profile > build/stats.json`
+- Use [webpack-visualizer](https://chrisbateman.github.io/webpack-visualizer/) to draw a chart visualizing bundle sizes.
+- Use [webpack-analyzer](https://webpack.github.io/analyse/) to see module dependencies and other hints.
+
+There is a short post about [webpack stats analysis](https://medium.com/@joeclever/three-simple-ways-to-inspect-a-webpack-bundle-7f6a8fe7195d)

@@ -2,17 +2,15 @@
 
 exports[`Callout should create callout element 1`] = `
 <div
-  className={undefined}
+  class="undefined"
 >
   <h5>
     Webpack Starter
   </h5>
   <p>
-    Webpack starter project for react
+    Webpack starter project for vanilla js
   </p>
-  <p
-    className="greeting"
-  >
+  <p>
     Hello world!
   </p>
 </div>

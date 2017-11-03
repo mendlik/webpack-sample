@@ -1,18 +1,17 @@
-import { shallow } from 'enzyme';
-import React from 'react';
-import renderer from 'react-test-renderer';
-import Callout from '../../src/app/Callout';
+import { JSDOM } from 'jsdom';
+import callout from '../../src/app/callout';
 
 describe('Callout', () => {
+  const { document } = (new JSDOM()).window;
+
   it('should create callout element', () => {
-    const component = renderer.create(<Callout />);
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    const element = callout(document);
+    expect(element).toMatchSnapshot();
   });
 
   it('should contain h5', () => {
-    const component = shallow(<Callout />);
-    const h5Text = component.find('h5').text();
-    expect(h5Text).toEqual('Webpack Starter');
+    const element = callout(document);
+    const header = element.querySelector('h5').outerHTML;
+    expect(header).toEqual('<h5>Webpack Starter</h5>');
   });
 });
