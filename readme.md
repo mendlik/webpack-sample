@@ -43,6 +43,7 @@ npm run serve
 - `npm run test:unit` - run only unit tests
 - `npm run test:ui` - run only [ui tests](https://facebook.github.io/jest/docs/en/snapshot-testing.html)
 - `npm run test:ui:update` - run only ui tests and [updates snapshots](https://facebook.github.io/jest/docs/en/snapshot-testing.html#updating-snapshots)
+- `npm run test:coverage` - run only all tests with coverage (coverage slows down tests)
 
 ### Advanced build commands
 - `npm run build:debug` - build project in debug mode (source maps, no resource minification, no hashes)
@@ -51,6 +52,27 @@ npm run serve
 ### Advanced watch commands
 - `npm run watch:reload` - development server without HMR. Simply reloads the page. Slower than `npm run watch`.
 - `npm run watch:livereload` - the slowest version but the one that is most similar to how it looks on production.
+
+## Project structure
+
+All starter projects share similar structure:
+
+```
+.
+├── build         # Build created after build
+│   ├── coverage    # Coverage reports
+│   └── dist        # Build result
+├── lib           # Build process sources
+│   └── webpack     # Webpack setup
+├── src           # Runtime sources
+│   ├── app         # Application main sources
+│   ├── assets      # Static assets (favicons, etc)
+│   └── theme       # Theme sources (global styles, etc)
+└── test          # Test sources
+    ├── app         # Application tests
+    ├── setup       # Test setup
+    └── stubs       # Test stubs
+```
 
 ## Analyze bundles
 

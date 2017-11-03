@@ -4,7 +4,7 @@ import appConfig from '../../src/config';
 
 const defaultOpts = {
   appConfig,
-  target: './build',
+  target: './build/dist',
   extractAssets: true,
   sourceMaps: false,
   optimize: false,

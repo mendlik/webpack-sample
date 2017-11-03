@@ -2,7 +2,7 @@
 
 exports[`Callout should create callout element 1`] = `
 <div
-  class="undefined"
+  class="callout"
 >
   <h5>
     Webpack Starter

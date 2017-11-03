@@ -1,5 +1,5 @@
 import html from './header.html';
-import { parseHtmlNode } from './util';
+import { parseHtmlNode } from '../util';
 
 const header = () =>
   parseHtmlNode(html);

@@ -1,4 +1,4 @@
-import Greeter from '../../src/app/Greeter';
+import Greeter from '../../../src/app/callout/Greeter';
 
 describe('Greeter', () => {
   it('should greet with "Hello world!"', () => {

@@ -1,5 +1,5 @@
 import { JSDOM } from 'jsdom';
-import callout from '../../src/app/callout';
+import callout from '../../../src/app/callout';
 
 describe('Callout', () => {
   const { document } = (new JSDOM()).window;
@@ -9,7 +9,7 @@ describe('Callout', () => {
     expect(element).toMatchSnapshot();
   });
 
-  it('should contain h5', () => {
+  it('should resolve template params', () => {
     const element = callout(document);
     const header = element.querySelector('h5').outerHTML;
     expect(header).toEqual('<h5>Webpack Starter</h5>');

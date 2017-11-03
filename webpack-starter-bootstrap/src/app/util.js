@@ -1,4 +1,4 @@
-export const parseHtmlNodes = html =>
+const parseHtmlNodes = html =>
   new DOMParser()
     .parseFromString(html, 'text/html')
     .body.childNodes;
