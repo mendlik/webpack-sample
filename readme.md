@@ -1,16 +1,24 @@
-# Webpack Sample
+# Webpack Starter
 
-Sample [webpack](https://webpack.js.org/) project that can be used as a starting point for a single page application.
+Starter [webpack](https://webpack.js.org/) projects.
+Use them as a starting point for a single page applications.
 
-This example is framework agnostic. It means that there is no react/angular/vue.js specific code.
+- [webpack-starter-vanilla-spa](webpack-starter-vanilla-spa) - Framework agnostic starter project of a single page application. It means that there is no react/angular/vue.js specific code.
+- [webpack-starter-react-spa](webpack-starter-react-spa) - Simple single page application that uses react.
+
 
 ## Features
+
+All starter projects share same features:
+
 - ES6 compilation with [Babel](http://babeljs.io/)
 - Resource optimization with [Webpack](https://webpack.js.org/)
 - Code linting with [Eslint](https://eslint.org/)
 - Unit and snapshot tests with [Jest](https://facebook.github.io/jest/)
 
 ## Commands
+
+All starter projects share same commands:
 
 Quickly show the production result:
 
