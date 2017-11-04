@@ -3,7 +3,7 @@ import autoprefixer from 'autoprefixer';
 
 const buildExtractStylePlugin = opts =>
   new ExtractTextPlugin({
-    filename: opts.hash ? '[name]-[contenthash].css' : '[name].css',
+    filename: opts.hash ? '[name]-[chunkhash].css' : '[name].css',
     allChunks: true,
     disable: !opts.extractAssets
   });

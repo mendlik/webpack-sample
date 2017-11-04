@@ -30,6 +30,16 @@ const normalizeConfig = config =>
     })
   });
 
+const buildStatsOptions = () => ({
+  children: false,
+  // Show only js and css assets
+  // See: https://regexr.com/3h3ub
+  excludeAssets: /\.(?!js$|css$).+$/
+});
+
+const buildDevServerOptions = opts =>
+  Object.assign({ stats: buildStatsOptions() }, opts.devServer);
+
 const buildEntryPoint = (fileName, opts) =>
   filterEmpty([
     opts.watch && 'react-hot-loader/patch',
@@ -39,7 +49,8 @@ const buildEntryPoint = (fileName, opts) =>
 const buildConfigBase = opts => ({
   context: srcPath,
   devtool: opts.sourceMaps && 'cheap-module-source-map',
-  devServer: opts.devServer,
+  devServer: buildDevServerOptions(opts),
+  stats: buildStatsOptions(),
   entry: {
     main: buildEntryPoint('./main.js', opts),
     vendor: buildEntryPoint('./vendor.js', opts)
@@ -47,8 +58,8 @@ const buildConfigBase = opts => ({
   output: {
     path: path.resolve(opts.target),
     publicPath: '/',
-    filename: opts.hash ? '[name]-[hash].js' : '[name].js',
-    chunkFilename: opts.hash ? '[name]-[hash].js' : '[name].js',
+    filename: opts.hash ? '[name]-[chunkhash].js' : '[name].js',
+    chunkFilename: opts.hash ? '[name]-[chunkhash].js' : '[name].js',
     hashDigestLength: 100,
     hashFunction: 'md5',
     hashDigest: 'hex'

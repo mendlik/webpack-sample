@@ -1,11 +1,11 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { favicon as faviconMarkup } from '../../../src/assets/favicons/markup.json';
+import * as faviconMeta from '../../../src/assets/favicons/meta.json';
 
 const buildHtmlPlugin = opts =>
   new HtmlWebpackPlugin({
     template: 'index.html',
     chunksSortMode: 'dependency',
-    favicons: faviconMarkup,
+    favicons: faviconMeta,
     config: opts.appConfig,
     inject: false,
     minify: opts.optimize ? {

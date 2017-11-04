@@ -29,6 +29,9 @@ const buildCommonsChunkPlugin = () =>
     minChunks: Infinity
   });
 
+const buildUglifyJsPlugin = () =>
+  new UglifyJsPlugin({ cache: '.cache/uglify' });
+
 const buildScriptsConfig = opts => ({
   module: {
     rules: [
@@ -39,7 +42,8 @@ const buildScriptsConfig = opts => ({
         options: {
           plugins: filterEmpty([
             opts.watch && 'react-hot-loader/babel'
-          ])
+          ]),
+          cacheDirectory: '.cache/babel'
         }
       }
     ]
@@ -50,7 +54,7 @@ const buildScriptsConfig = opts => ({
     !opts.watch && opts.hash && buildChunkHashPlugin(),
     !opts.watch && buildInlineManifestPlugin(),
     opts.watch && new webpack.NamedModulesPlugin(),
-    !opts.watch && opts.optimize && new UglifyJsPlugin()
+    !opts.watch && opts.optimize && buildUglifyJsPlugin()
   ]
 });
 

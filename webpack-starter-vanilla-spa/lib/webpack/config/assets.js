@@ -12,9 +12,19 @@ const resolveAssetLoader = (assetDirName, opts) => (
     'url-loader?limit=1000000000'
 );
 
-const buildCopyPlugin = () =>
+const buildCopyPluginForAssets = () =>
   new CopyWebpackPlugin([
     { from: 'assets' }
+  ], {
+    ignore: [
+      'favicons/meta.json',
+      'favicons/favicons.html'
+    ]
+  });
+
+const buildCopyPluginForRootFavicon = () =>
+  new CopyWebpackPlugin([
+    { from: 'assets/favicons/favicon.ico', to: 'favicon.ico' }
   ]);
 
 const buildAssetConfig = opts => ({
@@ -27,11 +37,16 @@ const buildAssetConfig = opts => ({
       {
         test: /\.(jpe?g|png|gif|svg)$/,
         loader: resolveAssetLoader('images', opts)
+      },
+      {
+        test: /\/src\/app\/.+\.(txt|html)$/,
+        use: 'raw-loader'
       }
     ]
   },
   plugins: [
-    buildCopyPlugin()
+    buildCopyPluginForAssets(),
+    buildCopyPluginForRootFavicon()
   ]
 });
 

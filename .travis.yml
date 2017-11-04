@@ -1,0 +1,6 @@
+language: node_js
+env:
+  - PROJECT_DIR=webpack-starter-vanilla-spa
+  - PROJECT_DIR=webpack-starter-bootstrap-spa
+  - PROJECT_DIR=webpack-starter-react-spa
+script: cd $PROJECT_DIR && npm run ci

@@ -2,5 +2,6 @@
   "output": "./src/assets/favicons",
   "iconsPath": "/favicons",
   "masterPicture": "./src/theme/favicons/favicon.png",
-  "appName": "Webpack starter"
+  "appName": "Webpack starter",
+  "versioning": true
 }
