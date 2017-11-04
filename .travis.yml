@@ -3,4 +3,8 @@ env:
   - PROJECT_DIR=webpack-starter-vanilla-spa
   - PROJECT_DIR=webpack-starter-bootstrap-spa
   - PROJECT_DIR=webpack-starter-react-spa
+cache:
+  directories:
+    - node_modules
+install: npm install
 script: cd $PROJECT_DIR && npm run ci
