@@ -3,8 +3,9 @@ env:
   - PROJECT_DIR=webpack-starter-vanilla-spa
   - PROJECT_DIR=webpack-starter-bootstrap-spa
   - PROJECT_DIR=webpack-starter-react-spa
-cache:
-  directories:
-    - node_modules
+# TODO: How to cache each node_modules directory?
+# cache:
+#   directories:
+#     - node_modules
 install: cd $PROJECT_DIR && npm install
 script: npm run ci
