@@ -2,8 +2,8 @@
 
 [![Travis Build](https://img.shields.io/travis/mendlik/webpack-starter.svg?style=flat-square)](https://travis-ci.org/mendlik/webpack-starter)
 
-Starter [webpack](https://webpack.js.org/) projects.
-Use them as a starting point for a single page applications.
+[Webpack](https://webpack.js.org/) starter projects.
+Use them as a starting point for your webpack based applications.
 
 - [webpack-starter-vanilla-spa](webpack-starter-vanilla-spa) - Framework agnostic starter project of a single page application. It means that there is no react/angular/vue.js specific code.
 - [webpack-starter-bootstrap-spa](webpack-starter-bootstrap-spa) - Extends webpack-starter-vanilla-spa by adding [bootstrap](http://getbootstrap.com/) resources.
@@ -21,9 +21,9 @@ All starter projects share same features:
 
 ## Commands
 
-All starter projects share same commands:
+All starter projects share same commands.
 
-Quickly show the production result:
+### Show me the result
 
 ```
 npm run build
