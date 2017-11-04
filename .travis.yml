@@ -6,5 +6,5 @@ env:
 cache:
   directories:
     - node_modules
-install: npm install
+install: cd $PROJECT_DIR && npm install
 script: cd $PROJECT_DIR && npm run ci
