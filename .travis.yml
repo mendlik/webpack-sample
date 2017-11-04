@@ -7,4 +7,4 @@ cache:
   directories:
     - node_modules
 install: cd $PROJECT_DIR && npm install
-script: cd $PROJECT_DIR && npm run ci
+script: npm run ci
