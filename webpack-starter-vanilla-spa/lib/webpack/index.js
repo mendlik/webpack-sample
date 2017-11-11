@@ -1,4 +1,3 @@
-import 'babel-polyfill';
 import buildConfig from './config';
 import appConfig from '../../src/config';
 
@@ -11,8 +10,19 @@ const defaultOpts = {
   hash: true
 };
 
-const resolveOpts = opts =>
-  Object.assign({}, defaultOpts, opts);
+const defaultHash = {
+  length: 10,
+  algorithm: 'sha256',
+  digest: 'hex'
+};
+
+const resolveOpts = (opts) => {
+  const configWithDefaults = Object.assign({}, defaultOpts, opts);
+  if (configWithDefaults.hash === true) {
+    configWithDefaults.hash = defaultHash;
+  }
+  return configWithDefaults;
+};
 
 const resolveOptsAndBuildConfig = opts =>
   buildConfig(resolveOpts(opts));

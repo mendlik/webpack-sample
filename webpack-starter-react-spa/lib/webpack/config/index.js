@@ -37,6 +37,16 @@ const buildStatsOptions = () => ({
   excludeAssets: /\.(?!js$|css$).+$/
 });
 
+const buildHashOptions = (opts) => {
+  const hashOpts = opts.hash;
+  if (!hashOpts) return {};
+  return {
+    hashDigestLength: hashOpts.length,
+    hashFunction: hashOpts.algorithm,
+    hashDigest: hashOpts.digest
+  };
+};
+
 const buildDevServerOptions = opts =>
   Object.assign({ stats: buildStatsOptions() }, opts.devServer);
 
@@ -55,15 +65,12 @@ const buildConfigBase = opts => ({
     main: buildEntryPoint('./main.js', opts),
     vendor: buildEntryPoint('./vendor.js', opts)
   },
-  output: {
+  output: Object.assign({
     path: path.resolve(opts.target),
     publicPath: '/',
     filename: opts.hash ? '[name]-[chunkhash].js' : '[name].js',
-    chunkFilename: opts.hash ? '[name]-[chunkhash].js' : '[name].js',
-    hashDigestLength: 100,
-    hashFunction: 'md5',
-    hashDigest: 'hex'
-  },
+    chunkFilename: opts.hash ? '[name]-[chunkhash].js' : '[name].js'
+  }, buildHashOptions(opts)),
   resolve: {
     extensions: ['.js', '.json', '.scss', '.css'],
     modules: [

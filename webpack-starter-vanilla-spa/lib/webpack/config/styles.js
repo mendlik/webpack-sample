@@ -1,9 +1,12 @@
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import autoprefixer from 'autoprefixer';
 
+const buildHashedFilename = hashOpts =>
+  `[name]-[${hashOpts.algorithm}:contenthash:${hashOpts.digest}:${hashOpts.length}].css`;
+
 const buildExtractStylePlugin = opts =>
   new ExtractTextPlugin({
-    filename: opts.hash ? '[name]-[chunkhash].css' : '[name].css',
+    filename: opts.hash ? buildHashedFilename(opts.hash) : '[name].css',
     allChunks: true,
     disable: !opts.extractAssets
   });
