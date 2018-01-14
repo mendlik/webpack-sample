@@ -1,6 +1,6 @@
 # Webpack Starter
 
-[![Travis Build](https://img.shields.io/travis/mendlik/webpack-starter.svg?style=flat-square)](https://travis-ci.org/mendlik/webpack-starter)
+[![Travis Build](https://img.shields.io/travis/pmendelski/webpack-starter.svg?style=flat-square)](https://travis-ci.org/pmendelski/webpack-starter)
 
 [Webpack](https://webpack.js.org/) starter projects.
 Use them as a starting point for your webpack based applications.
